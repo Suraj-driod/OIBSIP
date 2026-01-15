@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">🔐 SecureApp</div>
+        <button class="btn-logout" onclick="handleLogout()">Logout</button>
+    </nav>
+    
+    <div class="dashboard-container">
+        <div class="welcome-card">
+            <h1>Welcome, <span id="userName"></span>!</h1>
+            <p class="welcome-subtitle">You've successfully accessed the secured area.</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">👤</div>
+                <div class="stat-info">
+                    <h3>Profile</h3>
+                    <p id="userEmail"></p>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">🕐</div>
+                <div class="stat-info">
+                    <h3>Session Started</h3>
+                    <p id="loginTime"></p>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">🔒</div>
+                <div class="stat-info">
+                    <h3>Status</h3>
+                    <p class="status-active">Authenticated</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-card">
+            <h2>🎉 Secure Content</h2>
+            <p>This content is only visible to authenticated users. Your session is protected and your data is secure.</p>
+            <ul>
+                <li>✅ Session validated</li>
+                <li>✅ User authenticated</li>
+                <li>✅ Access granted</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="auth.js"></script>
+    <script>
+        checkAuth('dashboard');
+        
+        const user = getCurrentUser();
+        if (user) {
+            document.getElementById('userName').textContent = user.name;
+            document.getElementById('userEmail').textContent = user.email;
+            document.getElementById('loginTime').textContent = new Date(user.loginTime).toLocaleString();
+        }
+        
+        function handleLogout() {
+            logout();
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

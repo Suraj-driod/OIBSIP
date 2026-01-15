@@ -1,0 +1,173 @@
+.calculator {
+  width: 340px;
+  background: linear-gradient(145deg, #1e1e2f, #252542);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.display {
+  background: linear-gradient(135deg, #0d0d1a, #141428);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.equation {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  color: #6b7280;
+  min-height: 24px;
+  word-break: break-all;
+  text-align: right;
+}
+
+.result {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 42px;
+  font-weight: 500;
+  color: #f9fafb;
+  word-break: break-all;
+  text-align: right;
+  text-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.btn {
+  font-family: 'Outfit', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  border: none;
+  border-radius: 14px;
+  padding: 18px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), transparent);
+  border-radius: 14px 14px 0 0;
+  pointer-events: none;
+}
+
+.btn-number {
+  background: linear-gradient(145deg, #2d2d44, #252538);
+  color: #e5e7eb;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.btn-number:hover {
+  background: linear-gradient(145deg, #3d3d5c, #353550);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 12px -2px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.btn-number:active {
+  transform: translateY(1px);
+  box-shadow: 
+    0 2px 4px -1px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.btn-operator {
+  background: linear-gradient(145deg, #4f46e5, #4338ca);
+  color: #ffffff;
+  box-shadow: 
+    0 4px 6px -1px rgba(79, 70, 229, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-operator:hover {
+  background: linear-gradient(145deg, #6366f1, #4f46e5);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 12px -2px rgba(99, 102, 241, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btn-operator:active {
+  transform: translateY(1px);
+  box-shadow: 
+    0 2px 4px -1px rgba(79, 70, 229, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.btn-function {
+  background: linear-gradient(145deg, #374151, #2d3748);
+  color: #9ca3af;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.btn-function:hover {
+  background: linear-gradient(145deg, #4b5563, #374151);
+  color: #d1d5db;
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 12px -2px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.btn-function:active {
+  transform: translateY(1px);
+  box-shadow: 
+    0 2px 4px -1px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.btn-equals {
+  background: linear-gradient(145deg, #10b981, #059669);
+  color: #ffffff;
+  box-shadow: 
+    0 4px 6px -1px rgba(16, 185, 129, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-equals:hover {
+  background: linear-gradient(145deg, #34d399, #10b981);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 12px -2px rgba(52, 211, 153, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btn-equals:active {
+  transform: translateY(1px);
+  box-shadow: 
+    0 2px 4px -1px rgba(16, 185, 129, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+@keyframes press {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
